@@ -6,6 +6,7 @@ import ExponentFour from "./components/ExponentFour";
 import ExponentFive from "./components/ExponentFive";
 import ExponentSix from "./components/ExponentSix";
 import { useState } from "react";
+import ExponentN from "./components/ExponentN";
 
 function App () {
   
@@ -23,11 +24,14 @@ function App () {
       <h2><em>Exponents</em></h2>
 
       <div className="container">
-        <ExponentTwo count={count}/>
+      {[2, 3, 4, 5, 6].map((n) => {
+					return <ExponentN key={n} count={count} exponent={n} />;
+				})}
+        {/* <ExponentTwo count={count}/>
         <ExponentThree count={count} />
         <ExponentFour count={count} />
         <ExponentFive count={count} />
-        <ExponentSix count={count} />
+        <ExponentSix count={count} /> */}
       </div>
     </div>
   );
